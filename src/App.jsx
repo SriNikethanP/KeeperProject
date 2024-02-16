@@ -7,13 +7,20 @@ import CreateArea from "./CreateArea";
 
 function App() {
   const [notes,updateNote] = React.useState([])
-
+  function deleteNote(id) {
+    // console.log(id);
+    updateNote((prevNoteArray) => {
+      return prevNoteArray.filter((item,index) => {
+        return index !== id;
+      })
+    })
+  }
   return (
     <div>
       <Header />
       <CreateArea toAdd={ updateNote} />
-      {notes.map((notes)=>{
-        return (<Note key={notes.key}  title={notes.title} content={notes.content} />)
+      {notes.map((notes,index)=>{
+        return (<Note key={index} id={index} toDelete={ deleteNote} title={notes.title} content={notes.content} />)
       })}
       <Footer />
     </div>

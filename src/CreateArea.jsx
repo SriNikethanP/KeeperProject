@@ -15,11 +15,13 @@ function CreateArea(props) {
         props.toAdd((prevNoteArray) => {
             // console.log(prevNoteArray)
             return ([...prevNoteArray, {
-                key: prevNoteArray.length + 1,
+                // key: prevNoteArray.length + 1,
                 title: title,
                 content:content,
             }])
         })
+        setTitle("")
+        setContent("")
         // console.log(props.toAdd)
     }
   return (
