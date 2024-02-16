@@ -20,8 +20,6 @@ function CreateArea(props) {
                 content:content,
             }])
         })
-        setTitle("")
-        setContent("")
         // console.log(props.toAdd)
     }
   return (
