@@ -20,13 +20,15 @@ function CreateArea(props) {
                 content:content,
             }])
         })
+        setTitle("")
+        setContent("")
         // console.log(props.toAdd)
     }
   return (
     <div>
       <form>
-        <input onChange={updateTitle} name="title" placeholder="Title" />
-              <textarea onChange={updateText} name="content" placeholder="Take a note..." rows="3" /> 
+              <input onChange={updateTitle} name="title" placeholder="Title" value={ title} />
+              <textarea onChange={updateText} name="content" placeholder="Take a note..." rows="3" value={content } /> 
     <button onClick={addItem} type="button" >Add</button>
       </form>
     </div>
